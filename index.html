@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List & Reminder</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body class="text-xl md:text-2xl lg:text-3xl font-monts bg-blue-100 w-screen">
+  <header class="sticky flex select-none border-b border-black">
+    <h1 class="bg-blue-200 text-5xl flex-grow my-0">Name</h1>
+    <div
+      class="navLinks z-[-999] duration-500 bg-blue-200 flex flex-grow justify-end gap-6 flex-col w-full h-40 absolute top-[-15rem] md:static md:w-auto md:h-auto md:flex-row md:gap-0">
+      <ion-icon onclick="onToggleMode(this)" name="sunny"
+      class="text-4xl my-auto mr-8 hover:cursor-pointer"></ion-icon>
+      <a href="#" class="text-3xl my-auto">Sign In</a>
+    </div>
+    <ion-icon onclick="onToggleMenu(this)" name="menu"
+      class="bg-blue-200 md:hidden text-5xl my-auto hover:cursor-pointer"></ion-icon>
+  </header>
+  <main class="mt-10 w-10/12 h-auto justify-self-center md:flex justify-between md:gap-8 lg:gap-12">
+    <section class="h-96 md:h-[48rem] border border-black bg-blue-200 md:flex-1">
+      <h2 class="text-3xl border-b border-black pl-1">Notes</h2>
+      <div class="">
+
+      </div>
+    </section>
+    <section class="h-96 md:h-[48rem] border border-black mt-12 md:mt-0 bg-blue-200 md:flex-1">
+      <h2 class="text-3xl border-b border-black pl-1">To Do List</h2>
+      <div class="">
+
+      </div>
+    </section>
+  </main>
+  <script>
+    const navLinks = document.querySelector('.navLinks')
+    function onToggleMenu(e) {
+      e.name = e.name === 'menu' ? 'close' : 'menu'
+      navLinks.classList.toggle('top-14')
+    }
+    function onToggleMode(e) {
+      e.name = e.name === 'sunny' ? 'moon' : 'sunny'
+    }
+  </script>
+</body>
+
+</html>
